@@ -53,10 +53,11 @@ int insertNode(int val){
 		ptr->addr = node;
 	}
 
+
 	return 0;
 
 }
-int printAllNodes(int length){
+int printAllNodes(){
 
 	if (head == NULL){
 		return -1;
