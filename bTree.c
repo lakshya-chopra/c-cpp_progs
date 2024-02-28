@@ -28,6 +28,17 @@ void printTabs(int tabs){
 	}
 }
 
+void insertNode(bTree** node,int value) {
+    if (*node == NULL) {
+        *node = createNode(value);
+    } else {
+        if (value < (*node)->val) {
+            insertNode(&((*node)->left),value);
+        } else {
+            insertNode(&((*node)->right),value);
+        }
+    }
+}
 
 void printTree(bTree* root,int tabs){
 	if(root == NULL){
@@ -57,7 +68,7 @@ void printTree(bTree* root,int tabs){
 
 int main(){
 
-	bTree *n1 = createNode(1);
+/*	bTree *n1 = createNode(1);
 	bTree * n2 = createNode(2);
 	bTree *n3 = createNode(3);
 	bTree *n4 = createNode(4);
@@ -88,7 +99,17 @@ int main(){
 	free(n5);
 	free(n6);
 	free(n7);
+*/
 
+	root = createNode(50);
+    insertNode(&root, 30);
+    insertNode(&root, 20);
+    insertNode(&root, 40);
+    insertNode(&root, 70);
+    insertNode(&root, 60);
+    insertNode(&root, 80);
+ 
+	printTree(root,0);
 
 
 	return 0;
