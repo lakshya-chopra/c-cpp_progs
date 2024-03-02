@@ -10,5 +10,8 @@
 ## double linked list : 
 ![image](https://github.com/lakshya-chopra/c-cpp_progs/assets/77010972/01dbaded-4d18-40a6-98ce-d0b627999b68)
 
-## binary tree node deletion
+## binary tree node deletion: 
 ![image](https://github.com/lakshya-chopra/c-cpp_progs/assets/77010972/c5a60b7d-763a-41c6-81ef-64edc607893c)
+
+## stack:
+![image](https://github.com/lakshya-chopra/c-cpp_progs/assets/77010972/0c28a760-dbad-46d5-b426-984b47eb58ae)
