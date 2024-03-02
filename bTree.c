@@ -179,8 +179,8 @@ int main(){
  
 	printTree(root,0);
 
-	deleteNode(20,root);
-	printTree(root,0);
+	// deleteNode(20,root);
+	// printTree(root,0);
 
 	return 0;
 }

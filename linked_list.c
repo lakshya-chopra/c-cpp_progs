@@ -97,12 +97,12 @@ int main(){
 		insertNode(i);
 	}
 	printf("Task Complete!\n");
-	printAllNodes(length);
+	printAllNodes();
 
 	printf("\n");
 
 	insertNodeAtStart(25);
-	printAllNodes(length + 1);
+	printAllNodes();
 
 	return 0;
 }
