@@ -58,7 +58,7 @@ void printTree(bTree* root,int tabs){
 		printTabs(tabs+1);
 		printf("left: \n");
 		
-		printTree(root->left,tabs+1);
+		printTree(root->left,tabs+1); //same as the amount of indentation given to left.
 		
 		printf("\n");
 		printTabs(tabs+1);
@@ -70,63 +70,75 @@ void printTree(bTree* root,int tabs){
 	}
 }
 
-bTree* deleteNode(int value,bTree * root1){
+bTree* deleteNode(int value,bTree * root){
 
-	if (root1 == NULL){
+	if (root == NULL){
 		return NULL;
 	}
 	else{
 
-		if (root1->value == value){
+		if (root->value == value){
 
-			//Now, we have to be careful and see that the deletion of root1 doesn't affect any other element.
+			//Now, we have to be careful and see that the deletion of root doesn't affect any other element.
 
 
-			if(root1->left == NULL && root1->right == NULL){
+			if(root->left == NULL && root->right == NULL){ //i.e if it is a leaf node.
 				//here we can safely delete
 
-				free(root1);
-				root1 = NULL;
+				free(root);
+				root = NULL;
 				return NULL;
 			}
-			else if (root1->left == NULL){
+			else if (root->left == NULL){
 
 				//here we will store the address of the right node and return it & delete the rest.
-				bTree * temp = root1->right;
-				free(root1);
-				root1 = NULL;
-				return temp;
+				bTree * temp = root;
+
+				root = root->right;
+
+				free(temp);
+				temp = NULL;
+				return root;
 
 			}
-			else if(root1->right == NULL){
-				bTree * temp = root1->left;
-				free(root1);
-				root1 = NULL;
-				return temp;
+			else if(root->right == NULL){
+				bTree * temp = root;
+
+				root = root->left;
+
+				free(temp);
+				temp = NULL;
+				return root;
 
 			}
 			else{
-				//neither are null
-				// we will check if the value entered is lesser than the root1 or not, if it is, then apply the delete op to left, else right.
+				//neither are null, find the minimum value from the right subtree and then copy it in place of the root and the delete that node with minimum value, also make sure to assign the right subtree of that node to the root.
 
-				if (value < root1->value){
-					root1->left = deleteNode(value,root1->left); //if root1->left is already NULL, then okay, else if it is equal to the value, then delete it and return NULL, 
+				bTree *minRightSub;
+
+				bTree* cur = root->right;
+				while(cur->left != NULL){
+					cur = cur->left;
 				}
-				else{
-					root1->right = deleteNode(value,root1->right);
-				}
+				minRightSub = cur;
+
+				root->value = minRightSub->value;
+
+				root->right = deleteNode(minRightSub->value,root->right);
+
+				return root;
 			}
 		}
 		else{
 			//again check
-				if (value < root1->value){
-					root1->left = deleteNode(value,root1->left);
+				if (value < root->value){
+					root->left = deleteNode(value,root->left);
 				}
 				else{
-					root1->right = deleteNode(value,root1->right);
+					root->right = deleteNode(value,root->right);
 				}
 		}
-		return root1; //if not found!
+		return root; //if not found!
 
 
 	}
@@ -179,8 +191,9 @@ int main(){
  
 	printTree(root,0);
 
-	// deleteNode(20,root);
-	// printTree(root,0);
+	deleteNode(20,root);
+	printf("\n\nModified Binary Tree:\n");
+	printTree(root,0);
 
 	return 0;
 }
