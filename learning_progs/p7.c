@@ -9,9 +9,11 @@ int wordCount = 7;
 
 void printSentence(char **words){
 
-	while(*words != NULL){
+	int i = 0;
+	while(i<wordCount){
 		printf("%s ",*words);
 		words++;
+		i++;
 	}
 	return;
 
@@ -32,7 +34,7 @@ int main(){
 
 			char word[50];
 			printf("Enter the next word: \n");
-			scanf("%s",word);
+			scanf("%s",word); //https://stackoverflow.com/a/34078801
 			words[wordCount++] = strdup(word);
 
 		}
