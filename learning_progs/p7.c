@@ -34,7 +34,11 @@ int main(){
 
 			char word[50];
 			printf("Enter the next word: \n");
-			scanf("%s",word); //https://stackoverflow.com/a/34078801
+			scanf("%s",word); 
+
+			//https://stackoverflow.com/a/34078801
+			//https://stackoverflow.com/a/14947862
+
 			words[wordCount++] = strdup(word);
 
 		}
@@ -44,5 +48,14 @@ int main(){
 
 
 	}
+
+    printf("Final sentence:\n");
+    printSentence(words);
+
+    for (int i = 0; i < wordCount; i++) {
+        free(words[i]);
+        words[i] = NULL;
+    }
+
 	return 0;
 }
