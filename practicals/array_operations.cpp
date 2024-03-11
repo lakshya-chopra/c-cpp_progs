@@ -104,21 +104,21 @@ public:
         }
 
     }
-    static int* mergeTwoArrays(Array arr1, Array arr2){
+    static int* mergeTwoArrays(Array * arr1, Array * arr2){
 
-        int len2 = arr1.len + arr2.len;
+        int len2 = (*arr1).len + (*arr2).len;
 
         int *arr3 = new int[len2];
 
         int j{};
         
         //first add elements of arr1, and then start at the next index for adding ELemENTS of arr2.
-        for(int i = 0;i<arr1.len;i++){
-            arr3[j++] = arr1.arr[i];
+        for(int i = 0;i<(*arr1).len;i++){
+            arr3[j++] = (*arr1).arr[i];
         }
 
-        for(int i = 0;i<arr2.len;i++){
-            arr3[j++] = arr2.arr[i];
+        for(int i = 0;i<(*arr2).len;i++){
+            arr3[j++] = (*arr2).arr[i];
         }
 
         return arr3; //returning an address to an integer, hence, int*
@@ -154,8 +154,25 @@ int main()
     arr2->printArr();
     arr2->sortArr();
 
+    std::cout<<"\ncheck if 5 exists in the arr2"<< std::endl;
+    int val = arr2->binSearch(5,0,5);
+    if(val != -1){
+        std::cout<<"Yes, it does! "<<std::endl;
+    }
+    else{
+        std::cout<<"No, it doesnt"<<std::endl;
+    }
+
     std::cout<<"array after sorting"<<std::endl;
     arr2->printArr();
+
+    std::cout<<"\nMergIng arr and arr2"<<std::endl;
+    int *arr_new = Array::mergeTwoArrays(arr,arr2);
+
+    for(int i = 0;i<(arr->len + arr2->len);i++){
+        std::cout<<arr_new[i]<<" ";
+    }
+
 
     delete arr;
 }
