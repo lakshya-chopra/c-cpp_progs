@@ -15,3 +15,7 @@
 
 ## stack:
 ![image](https://github.com/lakshya-chopra/c-cpp_progs/assets/77010972/0c28a760-dbad-46d5-b426-984b47eb58ae)
+
+## array_operations
+![image](https://github.com/lakshya-chopra/c-cpp_progs/assets/77010972/5ee000db-b57e-4427-b034-4254053f082c)
+
