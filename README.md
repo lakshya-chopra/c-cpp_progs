@@ -19,3 +19,5 @@
 ## array_operations
 ![image](https://github.com/lakshya-chopra/c-cpp_progs/assets/77010972/5ee000db-b57e-4427-b034-4254053f082c)
 
+## matrix operations:
+![Uploading image.png…]()
