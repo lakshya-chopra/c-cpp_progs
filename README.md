@@ -22,3 +22,7 @@
 ## matrix operations:
 ![image](https://github.com/lakshya-chopra/c-cpp_progs/assets/77010972/9a3eff83-9f8c-41ce-bda6-045825ef9c4a)
 
+## file i/o:
+![image](https://github.com/lakshya-chopra/c-cpp_progs/assets/77010972/9629d9f1-a85b-4e56-b425-55b021ac5bf7)
+
+
