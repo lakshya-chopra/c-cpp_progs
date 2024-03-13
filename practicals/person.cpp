@@ -75,6 +75,9 @@ private:
         cout << "Department: " << department << endl;
         cout << "Salary: USD" << salary << endl;
     }
+    void tellCompany(){
+        cout<<"my own"<<endl;
+    }
 public:
     void sayHi(){
         cout<<"\nNo, i wont"<<endl;
@@ -92,7 +95,10 @@ int main()
     st->display(); // gotta add the virtual keyword to override.
 
     Person *employee = new Employee("LakshyaChopra", "Seniormost Engineer & Owner", 15000000);
-    employee->display(); //also see, how the Parent reference can access even private members.
+    employee->display(); //also see, how the Parent reference can access even private members, well because it has provided the signature, if we do the same thing on any other method (not present in the parent) , then no!
+
+    // employee->tellCompany(); // ERROR
+
 
     // one could've have accessed the objects of the derived classes with the references of the derived classes as well, in that CASE, we won't have to use the virtual keyword. // for ex: below:
     Employee *new_emp = new Employee("idk","junior",1000);

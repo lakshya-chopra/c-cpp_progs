@@ -1,0 +1,19 @@
+
+
+Student Details:	
+Name: kriish
+Grade: 8
+Roll No. 115
+Year:2024
+
+Student Details:	
+Name: Son
+Grade: 7.5
+Roll No. 116
+Year:2024
+
+Student Details:	
+Name: CR7
+Grade: 10
+Roll No. 18
+Year:2024
