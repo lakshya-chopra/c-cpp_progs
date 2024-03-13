@@ -175,4 +175,5 @@ int main()
 
 
     delete arr;
+    delete[] arr_new;
 }
