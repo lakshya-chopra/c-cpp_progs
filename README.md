@@ -19,3 +19,6 @@
 ## array_operations
 ![image](https://github.com/lakshya-chopra/c-cpp_progs/assets/77010972/5ee000db-b57e-4427-b034-4254053f082c)
 
+## matrix operations:
+![image](https://github.com/lakshya-chopra/c-cpp_progs/assets/77010972/9a3eff83-9f8c-41ce-bda6-045825ef9c4a)
+
