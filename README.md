@@ -25,4 +25,7 @@
 ## file i/o:
 ![image](https://github.com/lakshya-chopra/c-cpp_progs/assets/77010972/9629d9f1-a85b-4e56-b425-55b021ac5bf7)
 
+## triangle:
+![image](https://github.com/lakshya-chopra/c-cpp_progs/assets/77010972/d338b2f1-2325-4972-ab1c-5730aa75d842)
+
 
