@@ -42,7 +42,10 @@ void insertNode(bTree** node,int value) {
         }
     }
 
-    //This is a BST, each node can have only 2 child nodes & left side must have a lower value than the parent, and right : greater.
+    /*
+	This is a BST, each node can have only 2 child nodes & left side must have a lower value than the parent, and right : greater.
+	The right subtree of an internal node must have greater values, and the left subtree of that node must have smaller values.
+	*/
 }
 
 void printTree(bTree* root,int tabs){
@@ -69,6 +72,30 @@ void printTree(bTree* root,int tabs){
 
 
 	}
+}
+
+int search(bTree* root, int value){
+
+	if(root == NULL){
+		return -1;
+	}
+
+	//recursive
+	if (root->value == value){
+		return 1;
+	}
+	else{
+		if(value < root->value){
+			return search(root->left,value);
+		}
+		else{
+			return search(root->right,value);
+		}
+	}
+	//if not found:
+	return -1;
+	
+
 }
 
 bTree* deleteNode(int value,bTree * root){
@@ -195,6 +222,20 @@ int main(){
 	deleteNode(20,root);
 	printf("\n\nModified Binary Tree:\n");
 	printTree(root,0);
+
+	int search_int;
+	printf("\nenter a value you want to search for: ");
+
+	scanf("%d",&search_int);
+
+	int res = search(root,search_int);
+	printf("\nchecking if %d is in the bTREE:\n",search_int);
+	if (res == 1){
+		printf("yes, exists!\n");
+	}
+	else{
+		printf("no bruder, it isnt there!\n");
+	}
 
 	return 0;
 }
