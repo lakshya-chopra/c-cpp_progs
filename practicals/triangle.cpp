@@ -60,8 +60,7 @@ class Triangle{
             return -1;
 
         }
-        double area = 0.5*base*height;
-        return area;
+        return 1/2*base*height;
 
     }
 
@@ -78,9 +77,9 @@ int main(){
     Triangle t1(4,5,6);
 
     //method overloading
-    cout<<"Area of triangle with sides: 4, 5, 6: "<<t1.area()<<endl;
+    cout<<"\n\n\nArea of triangle with sides: 4, 5, 6: "<<t1.area()<<endl;
 
     Triangle t2(3,4,5);
-    cout<<"Area of triangle with sides: 3, 4, 5: "<<t2.area(3,4);
+    cout<<"Area of triangle with sides: 3, 4, 5"<<t2.area(3,4)<<"\n"<<endl;
 
 }
